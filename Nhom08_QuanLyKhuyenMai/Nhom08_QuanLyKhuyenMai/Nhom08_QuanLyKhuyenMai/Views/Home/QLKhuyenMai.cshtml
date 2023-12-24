@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "QLKhuyenMai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Nhom08_QuanLyKhuyenMai.Models;
+@{
+    List<LoaiSanPham> dsLoai = ViewBag.dsLoai;
+    List<KhuyenMai> dsKhuyenMai = ViewBag.listKhuyenMai;
+    double SL = ViewBag.SL;
+    int page = ViewBag.page;
+    int pageTemp = page;
+
+    int soTrang = (int)Math.Ceiling(SL / 5);
+    int page_ = (pageTemp++ > soTrang) ? soTrang : pageTemp++;
+    bool kiemTraThoiHan(DateTime date)
+    {
+        if (date < DateTime.Now)
+            return false;
+        return true;
+    }
+
+}
+
+<main>
+    <div class="row color-gray">
+        <div class="col-md-2"> Lọc theo:</div>
+        <div class="col-md-3">
+            <select id="combobox1" class="combobox">
+                <option>Sắp xếp</option>
+                <option value="TangDan" >Phần trăm khuyến mãi tăng dần</option>
+                <option value="GiamDan" >Phần trăm khuyến mãi giảm dần</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select class="combobox">
+                <option>Lọc theo loại</option>
+                @{
+                    foreach (var item in dsLoai)
+                    {
+                        <option value="@item.maLoai">@item.tenLoai</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select id="combobox3" class="combobox">
+                <option>Lọc theo sản phẩm</option>
+                <option value="LocSanPhamConHan">Khuyến mãi còn hạn</option>
+                <option value="LocSanPhamHetHan">Khuyến mãi hết hạn</option>
+            </select>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <h4 class="text-decoration-underline fw-bold" style="color:#121212">Khuyến mãi</h4>
+    </div>
+    <div class="row pt-2 pb-2"
+         style="background-image:linear-gradient(45deg, #bbfff9,#70fcf0); margin-right:2%; border-radius:10px">
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4 card-km">
+                    <a href="/Home/CRUDKhuyenMai"><img src="~/Images/addDocument.png" width="70%" height="70%" style="margin:10%;" /></a>
+                </div>
+                @{
+
+                    foreach (var item in dsKhuyenMai)
+                    {
+                        <div class="col-md-4 card-km">
+                            <a href="/Home/CRUDKhuyenMai/@item.maKhuyenMai" style="text-decoration:none; color:none">
+                                <div>
+                                    @{
+                                        if (!kiemTraThoiHan(item.ngayKetThuc))
+                                        {
+                                            <p class="lable-head_">Hết hạn</p>
+                                        }
+                                    }
+                                    <h5 class="text-primary fw-bold">@item.tieuDe<label class="text-gray">(@item.maKhuyenMai)</label></h5>
+                                    @{
+                                        if (item.moTa.Length > 70)
+                                        {
+                                            <p>@item.moTa.Substring(0, 30) ...</p>
+                                        }
+                                        else
+                                        {
+                                            <p>@item.moTa</p>
+                                        }
+                                    }
+                                    <h6>Ngày bắt đầu: @item.ngayBatDau.ToString("dd-MM-yyyy")</h6>
+                                    <h6>Ngày kết thúc:@item.ngayKetThuc.ToString("dd-MM-yyyy")</h6>
+                                </div>
+                            </a>
+
+                        </div>
+                    }
+
+                }
+
+            </div>
+        </div>
+
+        <div class="row">
+            <br /><br />
+            <ul class="list-inline">
+                @{
+                    if (soTrang < 10)
+                    {
+                        for (int i = 1; i <= soTrang; i++)
+                        {
+                            <li class="list-inline-item">
+                                <a href="/Home/QLKhuyenMaiPhanTrang/@i" class="btn btn-danger">@i</a>
+                            </li>
+                        }
+
+                    }
+                    else
+                    {
+                        for (int i = page - 2; i <= page + 3; i++)
+                        {
+                            <li class="list-inline-item">
+                                <a href="/Home/QLKhuyenMaiPhanTrang/@i" class="btn btn-danger">@i</a>
+                            </li>
+                        }
+                        <li class="list-inline-item">
+                            <a href="/Home/QLKhuyenMaiPhanTrang/@page_" class="btn btn-danger">》</a>
+                        </li>
+                    }
+                }
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+<script>
+
+
+    var combobox1 = document.getElementById('combobox1');
+    var combobox2 = document.getElementById('combobox2');
+    var combobox3 = document.getElementById('combobox3');
+
+    combobox1.onchange = function () {
+        if (combobox1.value == "TangDan") {
+            window.location.href = "/Home/LocSanPhamMaTangDan/@page";
+        }
+        else if (combobox1.value == "GiamDan") {
+            window.location.href = "/Home/LocSanPhamMaGiamDan/@page";
+        }
+
+    }
+
+    combobox3.onchange = function () {
+        if (combobox3.value == "LocSanPhamConHan") {
+            window.location.href = "/Home/LocSanPhamConHan";
+        }
+        else if (combobox3.value == "LocSanPhamHetHan") {
+            window.location.href = "/Home/LocSanPhamHetHan";
+        }
+
+    }
+</script>

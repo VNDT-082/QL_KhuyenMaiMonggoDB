@@ -1,0 +1,325 @@
+[{
+  "_id": {
+    "$oid": "651d92caba7e3194a51cb4f0"
+  },
+  "maKhuyenMai": "KM001",
+  "tieuDe": "Giảm giá Tết đoàn viên",
+  "moTa": "Giảm ngay 15% trên từng sản phẩm",
+  "ngayBatDau": {
+    "$date": "2023-09-02T17:00:00.000Z"
+  },
+  "ngayKetThuc": {
+    "$date": "2023-10-27T17:00:00.000Z"
+  },
+  "PhanTramKhuyenMai": 15,
+  "LoaiKhuyenMai": {
+    "MaLoai": "LKM20231009021521",
+    "TenLoai": "ok"
+  },
+  "danhSachSanPham": [
+    {
+      "maSanPham": "sp001",
+      "tenSanPham": "Mì ăn liền hảo hảo",
+      "gia": 399000,
+      "hinhAnh": [
+        "haohao.png"
+      ],
+      "moTa": "Sợi mì Hảo Hảo vàng dai ngon hòa quyện trong nước súp tôm chua cay đậm đà từng sợi mì sóng sánh cùng hương thơm quyến rũ ngất ngây. Thùng 30 gói mì Hảo Hảo tôm chua cay 75g là lựa chọn hấp dẫn không thể bỏ qua đặc biệt là những ngày bận rộn cần bổ sung năng lượng nhanh chóng, đủ chất",
+      "thuongHieu": "Hảo Hảo Việt Nam",
+      "sanXuatTai": "Việt Nam",
+      "loaiSanPham": {
+        "maLoai": "spl001",
+        "tenLoai": "Sản phẩm ăn liền"
+      }
+    },
+    {
+      "maSanPham": "sp0005",
+      "tenSanPham": "Nước giặt Ariel chuyên gia cửa trên hương nắng mai ",
+      "gia": 370000,
+      "hinhAnh": [
+        "ariel01.png"
+      ],
+      "moTa": "Nước giặt Ariel là thương hiệu nước giặt được chị em nội trợ ưa chuộng hàng đầu. 2 túi nước giặt Ariel hương nắng mai 3.5kg dạng gel đậm đặc cho khả năng giặt tẩy vượt trội, giúp đánh bật mọi vết bẩn tốt hơn gấp 2 lần chỉ trong 1 bước giặt, không để lại chất cặn và lưu hương thơm tươi mát.",
+      "thuongHieu": "Ariel",
+      "sanXuatTai": "Trung Quốc",
+      "loaiSanPham": {
+        "maLoai": "lsp002",
+        "tenLoai": "Ve sinh nha cua"
+      }
+    },
+    {
+      "maSanPham": "sp0001",
+      "tenSanPham": "Mi an lien hao hao",
+      "gia": 399000,
+      "hinhAnh": [
+        "haohao01.png",
+        "haohao02.png"
+      ],
+      "moTa": "Sợi mì Hảo Hảo vàng dai ngon hòa quyện trong nước súp tôm chua cay đậm đà từng sợi mì sóng sánh cùng hương thơm quyến rũ ngất ngây. Thùng 30 gói mì Hảo Hảo tôm chua cay 75g là lựa chọn hấp dẫn không thể bỏ qua đặc biệt là những ngày bận rộn cần bổ sung năng lượng nhanh chóng, đủ chất.",
+      "thuongHieu": "Hao Hao Viet Nam",
+      "sanXuatTai": "Viet Nam",
+      "loaiSanPham": {
+        "maLoai": "spl001",
+        "tenLoai": "Sản phẩm ăn liền"
+      }
+    },
+    {
+      "maSanPham": "sp0003",
+      "tenSanPham": "Nuoc giat Omo matic huong Comfor",
+      "gia": 346000,
+      "hinhAnh": [
+        "omomatic01.png",
+        "omomatic02.png"
+      ],
+      "moTa": "Nước giặt với nhiều công nghệ giặt tẩy nên người sử dụng không cần ngâm quần áo lâu. Nước giặt OMO với màng chắn kháng khuẩn Xanh, đánh bật vết bẩn khô cứng chỉ trong 1 lần giặt. 2 túi nước giặt OMO Matic Comfort tinh dầu thơm 3.6kg mang hương dầu thơm Comfort lưu giữ trên quần áo cả ngày.",
+      "thuongHieu": "OMO",
+      "sanXuatTai": "Viet Nam",
+      "loaiSanPham": {
+        "maLoai": "lsp002",
+        "tenLoai": "Ve sinh nha cua"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6522789cdf4bd7d101de751e"
+  },
+  "maKhuyenMai": "KM002",
+  "tieuDe": "Hot Deals cuối tuần, săn sales ngay",
+  "moTa": "Cuối tuần rồi, mua săm thôi, giảm ngay 25% trên từng sản phẩm, chần chờ gì nữa. Nhanh tay cho ngay vào giỏ hàng ngay thôi.",
+  "ngayBatDau": {
+    "$date": "2023-10-02T17:00:00.000Z"
+  },
+  "ngayKetThuc": {
+    "$date": "2023-11-23T17:00:00.000Z"
+  },
+  "PhanTramKhuyenMai": 30,
+  "LoaiKhuyenMai": {
+    "MaLoai": "KML001",
+    "TenLoai": "Khuyễn mãi ngày lễ"
+  },
+  "danhSachSanPham": [
+    {
+      "maSanPham": "sp0001",
+      "tenSanPham": "Mi an lien hao hao",
+      "gia": 399000,
+      "hinhAnh": [
+        "haohao01.png",
+        "haohao02.png"
+      ],
+      "moTa": "Sợi mì Hảo Hảo vàng dai ngon hòa quyện trong nước súp tôm chua cay đậm đà từng sợi mì sóng sánh cùng hương thơm quyến rũ ngất ngây. Thùng 30 gói mì Hảo Hảo tôm chua cay 75g là lựa chọn hấp dẫn không thể bỏ qua đặc biệt là những ngày bận rộn cần bổ sung năng lượng nhanh chóng, đủ chất.",
+      "thuongHieu": "Hao Hao Viet Nam",
+      "sanXuatTai": "Viet Nam",
+      "loaiSanPham": {
+        "maLoai": "spl001",
+        "tenLoai": "Sản phẩm ăn liền"
+      }
+    },
+    {
+      "maSanPham": "sp002",
+      "tenSanPham": "Cháo ăn liền gấu đỏ",
+      "gia": 38000,
+      "hinhAnh": [
+        "gaudo.png"
+      ],
+      "moTa": "Cháo ăn liền tiện lợi từ thương hiệu cháo Gấu Đỏ. 10 gói cháo thịt bằm Gấu Đỏ 50g được làm từ các nguyên liệu tự nhiên, không chất bảo quản an toàn cho sức khỏe, cháo có vị thịt bằm thơm ngon cùng mùi hương hấp dẫn, đủ dinh dưỡng cho một bữa ăn mà lại cực nhanh và đơn giản",
+      "thuongHieu": "Gấu đỏ Việt Nam",
+      "sanXuatTai": "Việt Nam",
+      "loaiSanPham": {
+        "maLoai": "spl001",
+        "tenLoai": "Sản phẩm ăn liền"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6522fe7a497f44cb4c828845"
+  },
+  "maKhuyenMai": "KM003",
+  "tieuDe": "demo",
+  "moTa": "demo",
+  "ngayBatDau": {
+    "$date": "2023-10-07T17:00:00.000Z"
+  },
+  "ngayKetThuc": {
+    "$date": "2023-10-07T17:00:00.000Z"
+  },
+  "PhanTramKhuyenMai": 0,
+  "LoaiKhuyenMai": {
+    "MaLoai": "KML001",
+    "TenLoai": "Khuyễn mãi ngày lễ"
+  },
+  "danhSachSanPham": [
+    {
+      "maSanPham": "sp002",
+      "tenSanPham": "Cháo ăn liền gấu đỏ",
+      "gia": 38000,
+      "hinhAnh": [
+        "gaudo.png"
+      ],
+      "moTa": "Cháo ăn liền tiện lợi từ thương hiệu cháo Gấu Đỏ. 10 gói cháo thịt bằm Gấu Đỏ 50g được làm từ các nguyên liệu tự nhiên, không chất bảo quản an toàn cho sức khỏe, cháo có vị thịt bằm thơm ngon cùng mùi hương hấp dẫn, đủ dinh dưỡng cho một bữa ăn mà lại cực nhanh và đơn giản",
+      "thuongHieu": "Gấu đỏ Việt Nam",
+      "sanXuatTai": "Việt Nam",
+      "loaiSanPham": {
+        "maLoai": "spl001",
+        "tenLoai": "Sản phẩm ăn liền"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6522ff345317391bf7e4fdcc"
+  },
+  "maKhuyenMai": "KM004",
+  "tieuDe": "fixbug",
+  "moTa": "fixbug",
+  "ngayBatDau": {
+    "$date": "2023-10-08T17:00:00.000Z"
+  },
+  "ngayKetThuc": {
+    "$date": "2023-10-08T17:00:00.000Z"
+  },
+  "PhanTramKhuyenMai": 1,
+  "LoaiKhuyenMai": {
+    "MaLoai": "KML001",
+    "TenLoai": "Khuyễn mãi ngày lễ"
+  },
+  "danhSachSanPham": []
+},
+{
+  "_id": {
+    "$oid": "6522ffc9d422a490c216862f"
+  },
+  "maKhuyenMai": "KM005",
+  "tieuDe": "ok",
+  "moTa": "ok",
+  "ngayBatDau": {
+    "$date": "2023-10-08T17:00:00.000Z"
+  },
+  "ngayKetThuc": {
+    "$date": "2023-10-08T17:00:00.000Z"
+  },
+  "PhanTramKhuyenMai": 1,
+  "LoaiKhuyenMai": {
+    "MaLoai": "LKM20231009021521",
+    "TenLoai": "ok"
+  },
+  "danhSachSanPham": [
+    {
+      "maSanPham": "sp20231010020702",
+      "tenSanPham": "2 thùng sữa tươi tiệt trùng Dalat Milk ít đường",
+      "gia": 7399000,
+      "hinhAnh": [
+        "dalat-milk-01.jpg"
+      ],
+      "moTa": "Sữa tươi Dalat Milk được làm từ sữa tươi của những vùng chăn nuôi bò sữa nổi tiếng chất lượng theo tiêu chuẩn Dalat Milk, đây là nhãn hiệu sữa thuộc TH true MILK. 2 thùng sữa tươi tiệt trùng Dalat Milk ít đường 180ml với hương vị thơm ngon dễ uống.",
+      "thuongHieu": "Dalat Milk (Việt Nam)",
+      "sanXuatTai": "Việt Nam",
+      "loaiSanPham": {
+        "maLoai": "spl003",
+        "tenLoai": "Sữa tươi"
+      }
+    },
+    {
+      "maSanPham": "sp0001",
+      "tenSanPham": "Mi an lien hao hao",
+      "gia": 399000,
+      "hinhAnh": [
+        "haohao01.png",
+        "haohao02.png"
+      ],
+      "moTa": "Sợi mì Hảo Hảo vàng dai ngon hòa quyện trong nước súp tôm chua cay đậm đà từng sợi mì sóng sánh cùng hương thơm quyến rũ ngất ngây. Thùng 30 gói mì Hảo Hảo tôm chua cay 75g là lựa chọn hấp dẫn không thể bỏ qua đặc biệt là những ngày bận rộn cần bổ sung năng lượng nhanh chóng, đủ chất.",
+      "thuongHieu": "Hao Hao Viet Nam",
+      "sanXuatTai": "Viet Nam",
+      "loaiSanPham": {
+        "maLoai": "spl001",
+        "tenLoai": "Sản phẩm ăn liền"
+      }
+    },
+    {
+      "maSanPham": "sp004",
+      "tenSanPham": "Downy hương cam chanh thanh mát",
+      "gia": 385000,
+      "hinhAnh": [
+        "domny01.png"
+      ],
+      "moTa": "2 túi nước giặt Downy hương cam chanh thanh mát 3.05kg không chỉ giúp quần áo luôn sạch sẽ mà còn mang đến hương thơm cam chanh dễ chịu, lưu hương lâu. Nước giặt Downy là nhãn hiệu nước giặt xả nổi tiếng, đang được rất nhiều người tiêu dùng lựa chọn hiện nay.",
+      "thuongHieu": "Downy (Mỹ)",
+      "sanXuatTai": "Việt Nam",
+      "loaiSanPham": {
+        "maLoai": "lsp002",
+        "tenLoai": "Ve sinh nha cua"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6523005a1528e0c80cdeca5e"
+  },
+  "maKhuyenMai": "KM006",
+  "tieuDe": "okkkk",
+  "moTa": "kkkkkk",
+  "ngayBatDau": {
+    "$date": "2023-10-08T17:00:00.000Z"
+  },
+  "ngayKetThuc": {
+    "$date": "2023-10-08T17:00:00.000Z"
+  },
+  "PhanTramKhuyenMai": 100,
+  "LoaiKhuyenMai": {
+    "MaLoai": "LKM20231009021746",
+    "TenLoai": "kkk"
+  },
+  "danhSachSanPham": [
+    {
+      "maSanPham": "sp0003",
+      "tenSanPham": "Nuoc giat Omo matic huong Comfor",
+      "gia": 346000,
+      "hinhAnh": [
+        "omomatic01.png",
+        "omomatic02.png"
+      ],
+      "moTa": "Nước giặt với nhiều công nghệ giặt tẩy nên người sử dụng không cần ngâm quần áo lâu. Nước giặt OMO với màng chắn kháng khuẩn Xanh, đánh bật vết bẩn khô cứng chỉ trong 1 lần giặt. 2 túi nước giặt OMO Matic Comfort tinh dầu thơm 3.6kg mang hương dầu thơm Comfort lưu giữ trên quần áo cả ngày.",
+      "thuongHieu": "OMO",
+      "sanXuatTai": "Viet Nam",
+      "loaiSanPham": {
+        "maLoai": "lsp002",
+        "tenLoai": "Ve sinh nha cua"
+      }
+    },
+    {
+      "maSanPham": "sp002",
+      "tenSanPham": "Cháo ăn liền gấu đỏ",
+      "gia": 38000,
+      "hinhAnh": [
+        "gaudo.png"
+      ],
+      "moTa": "Cháo ăn liền tiện lợi từ thương hiệu cháo Gấu Đỏ. 10 gói cháo thịt bằm Gấu Đỏ 50g được làm từ các nguyên liệu tự nhiên, không chất bảo quản an toàn cho sức khỏe, cháo có vị thịt bằm thơm ngon cùng mùi hương hấp dẫn, đủ dinh dưỡng cho một bữa ăn mà lại cực nhanh và đơn giản",
+      "thuongHieu": "Gấu đỏ Việt Nam",
+      "sanXuatTai": "Việt Nam",
+      "loaiSanPham": {
+        "maLoai": "spl001",
+        "tenLoai": "Sản phẩm ăn liền"
+      }
+    },
+    {
+      "maSanPham": "sp004",
+      "tenSanPham": "Downy hương cam chanh thanh mát",
+      "gia": 385000,
+      "hinhAnh": [
+        "domny01.png"
+      ],
+      "moTa": "2 túi nước giặt Downy hương cam chanh thanh mát 3.05kg không chỉ giúp quần áo luôn sạch sẽ mà còn mang đến hương thơm cam chanh dễ chịu, lưu hương lâu. Nước giặt Downy là nhãn hiệu nước giặt xả nổi tiếng, đang được rất nhiều người tiêu dùng lựa chọn hiện nay.",
+      "thuongHieu": "Downy (Mỹ)",
+      "sanXuatTai": "Việt Nam",
+      "loaiSanPham": {
+        "maLoai": "lsp002",
+        "tenLoai": "Ve sinh nha cua"
+      }
+    }
+  ]
+}]

@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "6527add2a7d5b10e942ef22b"
+  },
+  "maNV": "NV001",
+  "tenNV": "Nguyễn Văn A",
+  "ngaySinh": {
+    "$date": "2002-05-01T00:00:00.000Z"
+  },
+  "diaChi": "123 Đường ABC, Quận XYZ",
+  "soDienThoai": "0123456789",
+  "ngayVaoLam": {
+    "$date": "2021-03-20T00:00:00.000Z"
+  },
+  "TaiKhoan": {
+    "tenTaiKhoan": "admin",
+    "matKhau": "123",
+    "quyen": "admin",
+    "trangThai": true
+  }
+},
+{
+  "_id": {
+    "$oid": "6527add2a7d5b10e942ef22c"
+  },
+  "maNV": "NV002",
+  "tenNV": "Trần Thị B",
+  "ngaySinh": {
+    "$date": "1988-05-25T00:00:00.000Z"
+  },
+  "diaChi": "456 Đường XYZ, Quận ABC",
+  "soDienThoai": "0987654321",
+  "ngayVaoLam": {
+    "$date": "2020-11-10T00:00:00.000Z"
+  },
+  "TaiKhoan": {
+    "tenTaiKhoan": "user",
+    "matKhau": "123",
+    "quyen": "user",
+    "trangThai": false
+  }
+},
+{
+  "_id": {
+    "$oid": "6527ae2ca7d5b10e942ef22d"
+  },
+  "maNV": "NV003",
+  "tenNV": "Lê Thị C",
+  "ngaySinh": {
+    "$date": "1995-08-03T00:00:00.000Z"
+  },
+  "diaChi": "789 Đường PQR, Quận LMN",
+  "soDienThoai": "0369874123",
+  "ngayVaoLam": {
+    "$date": "2022-04-15T00:00:00.000Z"
+  },
+  "TaiKhoan": {
+    "tenTaiKhoan": "userC",
+    "matKhau": "123",
+    "quyen": "user",
+    "trangThai": true
+  }
+},
+{
+  "_id": {
+    "$oid": "652a7df91876a99ce2465f62"
+  },
+  "maNV": "NV004",
+  "tenNV": "Võ Nguyễn Duy Tân",
+  "ngaySinh": {
+    "$date": "2002-02-07T17:00:00.000Z"
+  },
+  "diaChi": "140 Lê Trọng Tấn",
+  "soDienThoai": "0123415671",
+  "ngayVaoLam": {
+    "$date": "2023-10-13T17:00:00.000Z"
+  },
+  "TaiKhoan": {
+    "tenTaiKhoan": "DuyTan",
+    "matKhau": "123",
+    "quyen": "user",
+    "trangThai": true
+  }
+}]

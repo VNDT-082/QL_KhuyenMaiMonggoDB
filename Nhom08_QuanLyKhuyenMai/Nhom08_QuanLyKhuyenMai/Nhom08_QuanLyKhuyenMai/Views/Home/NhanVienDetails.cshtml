@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "NhanVienDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<NhanVien> nv = ViewBag.dsNV;
+    List<TaiKhoan> tk = ViewBag.dsTK;
+}
+@using Nhom08_QuanLyKhuyenMai.Models;
+
+<a href="/Home/AddNhanVien" class="btn btn-primary" style="width:80px">Thêm</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Nhân Viên</th>
+            <th>Tên Nhân Viên</th>
+            <th>Ngày Sinh</th>
+            <th>Địa Chỉ</th>
+            <th>Số Điện Thoại</th>
+            <th>Ngày Vào Làm</th>
+            <th>Thao Tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var nhanVien in nv)
+        {
+            <tr>
+                <td>@nhanVien.maNV</td>
+                <td>@nhanVien.tenNV</td>
+                <td>@nhanVien.ngaySinh.ToShortDateString()</td>
+                <td>@nhanVien.diaChi</td>
+                <td>@nhanVien.soDienThoai</td>
+                <td>@nhanVien.ngayVaoLam.ToShortDateString()</td>
+                <td>
+                    <a href="/Home/EditNhanVien?id=@nhanVien.maNV" class="btn btn-primary">Sửa</a>
+                    <a href="/Home/DeleteNhanVien?id=@nhanVien.maNV" class="btn btn-primary">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+

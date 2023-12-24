@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Thêm Nhân Viên";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center">Thêm Nhân Viên</h2>
+            <form method="post" action="AddNhanVien" class="mt-3">
+                <div class="form-group">
+                    <label for="TenNV">Tên Nhân Viên</label>
+                    <input type="text" id="TenNV" name="TenNV" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="NgaySinh">Ngày Sinh</label>
+                    <input type="date" id="NgaySinh" name="NgaySinh" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="DiaChi">Địa Chỉ</label>
+                    <input type="text" id="DiaChi" name="DiaChi" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="SoDienThoai">Số Điện Thoại</label>
+                    <input type="text" id="SoDienThoai" name="SoDienThoai" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="NgayVaoLam">Ngày Vào Làm</label>
+                    <input type="date" id="NgayVaoLam" name="NgayVaoLam" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="TenTaiKhoan">Tên Tài Khoản</label>
+                    <input type="text" id="TenTaiKhoan" name="TenTaiKhoan" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="MatKhau">Mật Khẩu</label>
+                    <input type="password" id="MatKhau" name="MatKhau" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="Quyen">Quyền</label>
+                    <select id="Quyen" name="Quyen" class="form-control" required>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Trạng Thái</label>
+                    <div class="form-check">
+                        <input type="radio" id="TrangThai1" name="TrangThai" value="true" class="form-check-input" checked>
+                        <label for="TrangThai1" class="form-check-label">Kích hoạt</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="TrangThai2" name="TrangThai" value="false" class="form-check-input">
+                        <label for="TrangThai2" class="form-check-label">Khóa</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Thêm Nhân Viên</button>
+            </form>
+        </div>
+    </div>
+</div>

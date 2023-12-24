@@ -1,0 +1,167 @@
+﻿body {
+    font-family:Tahoma;
+}
+a {
+    text-decoration: none;
+}
+.max-width {
+    width:100%;
+}
+.width-90 {
+    width:90%;
+    width:90%;
+}
+.height-30 {
+    height: 100px;
+}
+.height-100 {
+    height: 100%;
+}
+.height-30percent {
+    height: 30%;
+}
+.li-item a {
+    margin-left:10%;
+    font-size:100%;
+    color:#ffffff;
+    font-weight:bold;
+    text-decoration:none;
+    cursor:pointer;
+}
+    .li-item a:hover {
+        margin-left: 11%;
+        font-size: 105%;
+        color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        
+    }
+
+.ul-list {
+    left:0;
+    margin-left: -10%;
+    list-style-type: none;
+    height: 100%;
+    width: 110%;
+    cursor: pointer;
+}
+.li-item {
+    margin-left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #117fdb;
+    border: solid 2px #035eaa;
+    padding-top: 5%;
+    cursor: pointer;
+}
+.content-card {
+    width: 100%;
+    padding:10%;
+    margin-top:28%;
+    background-color: #117fdb;
+}
+    .content-card image {
+        z-index:1000;
+        margin-left:5%;
+    }
+.color-gray {
+    background-color:#848484;
+}
+.text-gray {
+    color: #848484;
+}
+.text-primary {
+    color:#0017d7;
+}
+.combobox {
+    width:100%;
+    height:40px;
+    margin:1% 0.5%;
+}
+.card-km {
+    transform:scale(0.95);
+    background-image:linear-gradient(#f1f3fd,#e5dbdb);
+    padding:2%;
+    
+    height:220px;
+}
+    .card-km:hover {
+        transform: scale(0.94);
+        background-image: linear-gradient(#f9d6d6,#ffabab);
+    }
+    .card-km img:hover {
+        margin:-1%;
+        transform: scale(1.1);
+    }
+.lable-head_ {
+    position:absolute;
+    font-size:15px;
+    font-weight:bold;
+    color:aliceblue;
+    background:#ff0000;
+    top:-2%;
+    right:0;
+    width:fit-content;
+    z-index:1000;
+    padding:2%;
+}
+.form-main {
+    clear:both;
+    width:90%;
+}
+.form-input {
+    width:100%;
+    margin:1%;
+    margin-top:0;
+}
+    .form-input:focus {
+        width: 100%;
+        margin-top: 0;
+        outline: 0.5px solid #31fdf0;
+    }
+
+.clear-both {
+    clear:both
+}
+.btn-add {
+    margin-top:45%;
+    margin-left:5%;
+    width: 90%;
+    display: none;
+}
+
+.card-main {
+    position: relative;
+    height:360px;
+}
+    .card-main img {
+        margin:5%;
+    }
+    .card-main:hover {
+        background-color: #939292d5;
+        height: 360px;
+    }
+    .card-main:hover .btn-add {
+        display:block;
+    }
+.ani {
+    margin-bottom:2%;
+    transform:rotate(45deg);
+}
+    .ani:hover {
+        margin-bottom: 2%;
+        transform: rotate(45deg);
+        transform: scale(2);
+    }
+
+.clear-value {
+    position:fixed;
+    top:9.5%;
+    right:13.5%;
+    z-index:1000;
+}
+    .clear-value img:hover {
+        transform:scale(1.2) rotate(45deg);
+
+    }

@@ -1,0 +1,129 @@
+[{
+  "_id": {
+    "$oid": "651d9688ba7e3194a51cb4f2"
+  },
+  "maSanPham": "sp0001",
+  "tenSanPham": "Mi an lien hao hao",
+  "gia": 399000,
+  "hinhAnh": [
+    "haohao01.png",
+    "haohao02.png"
+  ],
+  "moTa": "Sợi mì Hảo Hảo vàng dai ngon hòa quyện trong nước súp tôm chua cay đậm đà từng sợi mì sóng sánh cùng hương thơm quyến rũ ngất ngây. Thùng 30 gói mì Hảo Hảo tôm chua cay 75g là lựa chọn hấp dẫn không thể bỏ qua đặc biệt là những ngày bận rộn cần bổ sung năng lượng nhanh chóng, đủ chất.",
+  "thuongHieu": "Hao Hao Viet Nam",
+  "sanXuatTai": "Viet Nam",
+  "loaiSanPham": {
+    "maLoai": "spl001",
+    "tenLoai": "Sản phẩm ăn liền"
+  }
+},
+{
+  "_id": {
+    "$oid": "651d96f6ba7e3194a51cb4f3"
+  },
+  "maSanPham": "sp002",
+  "tenSanPham": "Cháo ăn liền gấu đỏ",
+  "gia": 38000,
+  "hinhAnh": [
+    "gaudo.png"
+  ],
+  "moTa": "Cháo ăn liền tiện lợi từ thương hiệu cháo Gấu Đỏ. 10 gói cháo thịt bằm Gấu Đỏ 50g được làm từ các nguyên liệu tự nhiên, không chất bảo quản an toàn cho sức khỏe, cháo có vị thịt bằm thơm ngon cùng mùi hương hấp dẫn, đủ dinh dưỡng cho một bữa ăn mà lại cực nhanh và đơn giản",
+  "thuongHieu": "Gấu đỏ Việt Nam",
+  "sanXuatTai": "Việt Nam",
+  "loaiSanPham": {
+    "maLoai": "spl001",
+    "tenLoai": "Sản phẩm ăn liền"
+  }
+},
+{
+  "_id": {
+    "$oid": "651d97dcba7e3194a51cb4f4"
+  },
+  "maSanPham": "sp0003",
+  "tenSanPham": "Nuoc giat Omo matic huong Comfor",
+  "gia": 346000,
+  "hinhAnh": [
+    "omomatic01.png",
+    "omomatic02.png"
+  ],
+  "moTa": "Nước giặt với nhiều công nghệ giặt tẩy nên người sử dụng không cần ngâm quần áo lâu. Nước giặt OMO với màng chắn kháng khuẩn Xanh, đánh bật vết bẩn khô cứng chỉ trong 1 lần giặt. 2 túi nước giặt OMO Matic Comfort tinh dầu thơm 3.6kg mang hương dầu thơm Comfort lưu giữ trên quần áo cả ngày.",
+  "thuongHieu": "OMO",
+  "sanXuatTai": "Viet Nam",
+  "loaiSanPham": {
+    "maLoai": "lsp002",
+    "tenLoai": "Ve sinh nha cua"
+  }
+},
+{
+  "_id": {
+    "$oid": "651d97dcba7e3194a51cb4f5"
+  },
+  "maSanPham": "sp004",
+  "tenSanPham": "Downy hương cam chanh thanh mát",
+  "gia": 385000,
+  "hinhAnh": [
+    "domny01.png"
+  ],
+  "moTa": "2 túi nước giặt Downy hương cam chanh thanh mát 3.05kg không chỉ giúp quần áo luôn sạch sẽ mà còn mang đến hương thơm cam chanh dễ chịu, lưu hương lâu. Nước giặt Downy là nhãn hiệu nước giặt xả nổi tiếng, đang được rất nhiều người tiêu dùng lựa chọn hiện nay.",
+  "thuongHieu": "Downy (Mỹ)",
+  "sanXuatTai": "Việt Nam",
+  "loaiSanPham": {
+    "maLoai": "lsp002",
+    "tenLoai": "Ve sinh nha cua"
+  }
+},
+{
+  "_id": {
+    "$oid": "651d97dcba7e3194a51cb4f6"
+  },
+  "maSanPham": "sp0005",
+  "tenSanPham": "Nước giặt Ariel chuyên gia cửa trên hương nắng mai ",
+  "gia": 370000,
+  "hinhAnh": [
+    "ariel01.png"
+  ],
+  "moTa": "Nước giặt Ariel là thương hiệu nước giặt được chị em nội trợ ưa chuộng hàng đầu. 2 túi nước giặt Ariel hương nắng mai 3.5kg dạng gel đậm đặc cho khả năng giặt tẩy vượt trội, giúp đánh bật mọi vết bẩn tốt hơn gấp 2 lần chỉ trong 1 bước giặt, không để lại chất cặn và lưu hương thơm tươi mát.",
+  "thuongHieu": "Ariel",
+  "sanXuatTai": "Trung Quốc",
+  "loaiSanPham": {
+    "maLoai": "lsp002",
+    "tenLoai": "Ve sinh nha cua"
+  }
+},
+{
+  "_id": {
+    "$oid": "6523fd41dd0b4ec5c3bb502f"
+  },
+  "maSanPham": "sp20231009201605",
+  "tenSanPham": "Túi hút ẩm Farcent khử mùi nấm mốc",
+  "gia": 29000,
+  "hinhAnh": [
+    "farcent01.jpg",
+    "Frarcent.jpg"
+  ],
+  "moTa": "Thương hiệu sáp thơm của thương hiệu sáp thơm, túi thơm Farcent mang đến cho không gian sống của bạn hương thơm thư giãn và thoải mái hơn với hương thơm tươi mát. Túi hút ẩm Farcent khử mùi nấm mốc 200g mang đến hương thơm dịu nhẹ cho không khí ở nhà.",
+  "thuongHieu": "Farcent (Đài Loan)",
+  "sanXuatTai": "Trung Quốc",
+  "loaiSanPham": {
+    "maLoai": "lsp002",
+    "tenLoai": "Ve sinh nha cua"
+  }
+},
+{
+  "_id": {
+    "$oid": "65244f56612981e5a4bb4fde"
+  },
+  "maSanPham": "sp20231010020702",
+  "tenSanPham": "2 thùng sữa tươi tiệt trùng Dalat Milk ít đường",
+  "gia": 7399000,
+  "hinhAnh": [
+    "dalat-milk-01.jpg"
+  ],
+  "moTa": "Sữa tươi Dalat Milk được làm từ sữa tươi của những vùng chăn nuôi bò sữa nổi tiếng chất lượng theo tiêu chuẩn Dalat Milk, đây là nhãn hiệu sữa thuộc TH true MILK. 2 thùng sữa tươi tiệt trùng Dalat Milk ít đường 180ml với hương vị thơm ngon dễ uống.",
+  "thuongHieu": "Dalat Milk (Việt Nam)",
+  "sanXuatTai": "Việt Nam",
+  "loaiSanPham": {
+    "maLoai": "spl003",
+    "tenLoai": "Sữa tươi"
+  }
+}]

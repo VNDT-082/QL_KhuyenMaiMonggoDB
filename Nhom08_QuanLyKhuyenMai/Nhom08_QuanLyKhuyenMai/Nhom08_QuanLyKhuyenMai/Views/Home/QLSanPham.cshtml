@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewBag.Title = "QLSanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Nhom08_QuanLyKhuyenMai.Models;
+@{ 
+    List<SanPham> dsSanPham = ViewBag.dsSanPham;
+    List<LoaiSanPham> dsLoaiSanPham_ = ViewBag.dsLoaiSanPham;
+}
+@model SanPham
+
+<div class="row max-width bg-white" id="mainForm" style="margin-left:0; margin-top:-0.7%; z-index:100">
+    
+    <div class="col-md-7" style="height:600px">
+        <div class="col-md-3 clear-value"><a href="/Home/Refesh"  style="box-shadow: 0 10px 25px #808080; border-radius:50%">
+            <img src="~/Images/loading-arrow.png" width="11%"/></a></div>
+        <form class="w-50 position-fixed" method="post" action="/Home/ThemSanPham" enctype="multipart/form-data">
+            <div class="row p-3" style="background-color:#d6d7d7; border-radius:5px; margin: 0.5% 7%;box-shadow:0 0 10px #808080 ">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="m-0">Mã sản phẩm:</p>
+                        <input type="text" class="form-input" style="height:40px" name="maSanPham" value="@Model.maSanPham" readonly />
+                    </div>
+                    <div class="col-md-4">
+                        <p class="m-0">Tên sản phẩm:</p>
+                        <input type="text" class="form-input" style="height:40px" name="tenSanPham" value="@Model.tenSanPham" />
+                    </div>
+                    <div class="col-md-4">
+                        <p class="m-0">Loại sản phẩm:</p>
+                        <select class="form-input" style="height:40px" id="selectedSP" name="loaiSanPham">
+                            @{ if (Model.loaiSanPham == null)
+                                {
+                                    <option value="Null"></option>
+                                    foreach (var item in dsLoaiSanPham_)
+                                    {
+                                        <option value="@item.maLoai">@item.tenLoai</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="@Model.loaiSanPham.maLoai">@Model.loaiSanPham.tenLoai</option>
+                                    foreach (var item in dsLoaiSanPham_)
+                                    {
+                                        if (item.maLoai != Model.loaiSanPham.maLoai)
+                                        {
+                                            <option value="@item.maLoai">@item.tenLoai</option>
+                                        }
+                                    }
+                                }
+
+                            }
+                            <option value="addNew">Thêm một loại sản phẩm</option>
+                        </select>
+                        <div class="col-md-12" id="_loaiSanPhamMoi" style="display:none">
+                            <hr />
+                            <p style="font-size:12px; font-weight:bold; color:#ff0000">Tên loại sản phẩm mới:</p>
+                            <input type="text" class="form-input" style="height:40px" name="loaiSanPhamMoi" />
+                        </div>
+                    </div>
+                    <hr class="m-lg-2" />
+                </div>
+                <p class="m-0">Mô tả:</p>
+                <textarea type="text" class="form-input" style="width:95%; height:200px" name="moTa">@Model.moTa</textarea>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="m-0">Giá:</p>
+                        <input type="text" class="form-input" style="height:40px" name="gia" value="@Model.gia" />
+                    </div>
+                    <div class="col-md-4">
+                        <p class="m-0">Sản xuất tại:</p>
+                        <input type="text" class="form-input" style="height:40px" name="sanXuatTai" value="@Model.sanXuatTai" />
+                    </div>
+                    <div class="col-md-4">
+                        <p class="m-0">Thương hiệu:</p>
+                        <input type="text" class="form-input" style="height:40px" name="thuongHieu" value="@Model.thuongHieu" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="~/Images/default_image.png" width="70%" height="90" class="m-1" id="hinhAnhSanPham" />
+                        <input type="file" id="fileHinhAnhSanPham" name="fileUpLoad" class="btn btn-primary " style="width:80%;padding-left: 1%;
+                            padding-top: 0%; padding-bottom: 0%; padding-right:0%" />
+                    </div>
+                    @{
+                        if (Model.hinhAnh != null)
+                        {
+                            if (Model.hinhAnh.Count() > 0)
+                            {
+                                foreach (string str in Model.hinhAnh)
+                                {
+                                    <div class="col-md-3">
+                                        <img src="~/Images/@str" width="70%" height="90" class="m-1" />
+                                        <a class="width-90 p-1 " style="margin-left:20%" 
+                                           href="/Home/PullHinhAnhRaKhoiSanPham/?maSanPham=@Model.maSanPham&tenAnh=@str">
+                                        <img src="~/Images/delete.png" class="ani" width="30%" /></a>
+                                    </div>
+                                }
+                            }
+                        }
+
+                    }
+                    <hr />
+                </div>
+                @{
+                    if (Model.maSanPham == "" || Model.maSanPham == null)
+                    {
+                        <div class="row"><input type="submit" name="submit" value="Thêm sản phẩm" class="btn btn-success m-lg-2" /></div>
+                    }
+                    else
+                    {
+                        <div class="row">
+                            <div class="col-md-6 "><input type="submit" name="submit" value="Xóa sản phẩm" class="btn btn-danger max-width mt-2" /></div>
+                            <div class="col-md-6 "><input type="submit" name="submit" value="Cập nhật sản phẩm"  class="btn btn-warning max-width mt-2" /></div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-5" style="">
+        <table class="table  table-striped">
+            <tr>
+                <td class="" style="width:20%">Hình ảnh</td>
+                <td class="" style="width:50%">Tên sản phẩm</td>
+                <td class="" style="width:20%">Giá</td>
+                <td class="" style="width:10%"></td>
+            </tr>
+            @{
+                if (dsSanPham != null || dsSanPham.Count > 0)
+                {
+                    foreach (var item in dsSanPham)
+                    {
+
+                        <tr>
+                            <td><a href="/Home/ChiTietSanPham/@item.maSanPham" class="text-dark">
+                            @{
+                                if (item.hinhAnh == null || item.hinhAnh.Count() == 0)
+                                { <img src="~/Images/default_image.png" width="90%" />}
+                                else
+                                {
+                                    <img src="~/Images/@item.hinhAnh[0]" width="90%" />
+                                }
+                            }
+                        </a></td>
+                            <td><a href="/Home/ChiTietSanPham/@item.maSanPham" class="text-dark">@item.tenSanPham<label>(@item.maSanPham )</label></a></td>
+                            <td>@item.gia.ToString("N0") vnđ</td>
+                            <td><a href="/Home/DeleteOneSanPham/@item.maSanPham"><img src="~/Images/remove.png" width="50%" /></a></td>
+                        </tr>
+                    }
+                }
+            }
+        </table>
+    </div>
+</div>
+
+<script>
+    var imgInput_SanPham = document.getElementById('fileHinhAnhSanPham');
+    var img_SanPham = document.getElementById('hinhAnhSanPham');
+
+    imgInput_SanPham.addEventListener('change', function() {
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.addEventListener("load", function () {
+        img_SanPham.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+    });
+
+    var loaiSanPhamMoi = document.getElementById('_loaiSanPhamMoi');
+    var mainForm = document.getElementById('mainForm');
+    selectedSP.onchange = function () {
+        var selectedValue = selectedSP.value;
+        if (selectedValue == "addNew") {
+            loaiSanPhamMoi.style.display = 'block';
+            mainForm.style.marginTop = '-35px';
+        }
+        else {
+            if (mainForm.style.marginTop == '-35px') {
+                mainForm.style.marginTop = '-10px';
+            }
+            loaiSanPhamMoi.style.display = 'none';
+        }
+
+    }
+</script>

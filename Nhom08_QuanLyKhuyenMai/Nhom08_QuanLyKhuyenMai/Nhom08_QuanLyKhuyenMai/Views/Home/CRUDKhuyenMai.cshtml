@@ -1,0 +1,324 @@
+﻿
+@{
+    ViewBag.Title = "CRUDKhuyenMai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Nhom08_QuanLyKhuyenMai.Models;
+@{ 
+    List<SanPham> dsSanPham = ViewBag.dsSanPham;
+    List<SanPham> dsSanPhamTheMa = ViewBag.dsSanPhamTheMa;
+    List<LoaiKhuyenMai> dsLoaiKhuyenMai = ViewBag.dsLoaiKhuyenMai;
+}
+@model KhuyenMai
+
+<div class="row">
+    <div class="col-md-9">
+        @{
+            if (Model.maKhuyenMai == null || Model.maKhuyenMai == "")
+            {
+                <form class="form-main" action="/Home/ThemKhuyenMai" method="post" enctype="multipart/form-data">
+                    <h6 class="text-center text-primary fw-bold">Thông tin khuyến mãi</h6>
+                    <div class="row">
+                        <p class="m-0">Tiêu đề:</p>
+                        <input type="text" class="form-input" name="tieuDe" />
+                        <hr class="m-lg-2" />
+
+                        <p class="m-0">Mô tả:</p>
+                        <textarea type="text" class="form-input" name="moTa"></textarea>
+                        <hr class="m-lg-2" />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Ngày bắt đầu:</p>
+                                <input type="date" class="form-control" name="ngayBatDau" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                            </div>
+                            <div class="col-md-6">
+                                <p>Ngày kết thúc:</p>
+                                <input type="date" class="form-control" name="ngayKetThuc" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                            </div>
+                        </div>
+                        <hr class="m-lg-2" />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Phần trăm khuyến mãi:</p>
+                                <input type="number" min="1" max="100" value="1" class="form-control" name="phanTramKhuyenMai" />
+                            </div>
+                            <div class="col-md-6">
+                                <p>Loại khuyến mãi:</p>
+                                <select class="form-select" id="selectedKM" name="loaiKhuyenMai">
+                                    @{ foreach (var item in dsLoaiKhuyenMai)
+                                        {
+                                            <option value="@item.maLoai">@item.tenLoai</option>
+                                        }
+                                    }
+                                    <option value="addNew">Thêm một loại khuyến mãi</option>
+                                </select>
+                                <div class="col-md-9" id="khuyenMaiMoi" style="display:none">
+                                    <hr />
+                                    <p style="font-size:12px; font-weight:bold; color:#ff0000">Tên loại khuyến mãi mới:</p>
+                                    <input type="text" class="form-control" name="loaiKhuyenMaiMoi" />
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" class="form-input" name="maKhuyenMai" value="" />
+                        @{
+                            if (Model.maKhuyenMai == "" || Model.maKhuyenMai == null)
+                            {
+                                <div class="row"><input type="submit" name="submit" value="Thêm khuyến mãi" class="btn btn-success m-lg-2" /></div>
+                            }
+                            else
+                            {
+                                <div class="row">
+                                    <div class="col-md-6 ">
+                                        <input type="submit" name="submit" value="Cập nhật thay đổi" class="btn btn-warning max-width mt-2" />
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <input type="submit" name="submit" value="Xóa khuyến mãi" class="btn btn-danger max-width mt-2" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        <hr class="m-lg-2" />
+                    </div>
+                </form>
+                <div class="row">
+                    <h5>Thêm sản phẩm vào chương trình khuyến mãi: <button class="btn btn-secondary" id="themSanPham" hidden>Thêm sản phẩm</button></h5>
+                </div>
+                <div class="row" id="dsSanPham" style="display:none">
+                    @{
+                        if (dsSanPham != null || dsSanPham.Count > 0)
+                        {
+                            foreach (var item in dsSanPham)
+                            {
+
+                                <div class="col-md-3 p-1 m-1">
+                                    <div class="card card-main">
+                                        <img src="~/Images/@item.hinhAnh[0]" width="90%" />
+                                        <div class="card-main position-absolute max-width height-100">
+                                            <a href="/Home/AddSanPhamToKhuyenMai/?maSanPham=@item.maSanPham&maKhuyenMai=@Model.maKhuyenMai"
+                                               class="btn btn-primary btn-add">Thêm vào chương trình</a>
+                                        </div>
+
+                                        <div class="card-body">
+                                            @{
+                                                if (item.tenSanPham.Length > 40)
+                                                {
+                                                    <h5 class="card-title text-primary">
+                                                        @item.tenSanPham.Substring(0, 40) ...
+                                                        <label class="text-gray">(@item.maSanPham)</label>
+                                                    </h5>
+                                                }
+                                                else
+                                                {
+                                                    <h5 class="card-title text-primary">
+                                                        @item.tenSanPham
+                                                        <label class="text-gray">(@item.maSanPham)</label>
+                                                    </h5>
+                                                }
+                                            }
+
+                                            <h6 class="card-text text-danger">@item.gia.ToString("N0") vnđ</h6>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+
+            }
+            else
+            {
+                <form class="form-main" action="/Home/ThemKhuyenMai" method="post" enctype="multipart/form-data">
+                    <h6 class="text-center text-primary fw-bold">Thông tin khuyến mãi</h6>
+                    <div class="row">
+                        <p class="m-0">Tiêu đề:</p>
+                        <input type="text" class="form-input" name="tieuDe" value="@Model.tieuDe" />
+                        <hr class="m-lg-2" />
+
+                        <p class="m-0">Mô tả:</p>
+                        <textarea type="text" class="form-input" name="moTa" value="@Model.moTa">@Model.moTa</textarea>
+                        <hr class="m-lg-2" />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Ngày bắt đầu:</p>
+                                <input type="date" class="form-control" name="ngayBatDau" value="@Model.ngayBatDau.ToString("yyyy-MM-dd")" />
+                            </div>
+                            <div class="col-md-6">
+                                <p>Ngày kết thúc:</p>
+                                <input type="date" class="form-control" name="ngayKetThuc" value="@Model.ngayKetThuc.ToString("yyyy-MM-dd")" />
+                            </div>
+                        </div>
+                        <hr class="m-lg-2" />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Phần trăm khuyến mãi:</p>
+                                <input type="number" max="100" class="form-control" name="phanTramKhuyenMai" value="@Model.phanTramKhuyenMai" />
+                            </div>
+                            <div class="col-md-6">
+                                <p>Loại khuyến mãi:</p>
+                                <select class="form-select" id="selectedKM" name="loaiKhuyenMai">
+                                    @{ foreach (var item in dsLoaiKhuyenMai)
+                                        {
+                                            <option value="@item.maLoai">@item.tenLoai</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <input type="hidden" class="form-input" name="maKhuyenMai" value="@Model.maKhuyenMai" />
+                        @{
+                            if (Model.maKhuyenMai == "" || Model.maKhuyenMai == null)
+                            {
+                                <div class="row"><input type="submit" name="submit" value="Thêm khuyến mãi" class="btn btn-success m-lg-2" /></div>
+                            }
+                            else
+                            {
+                                <div class="row">
+                                    <div class="col-md-6 ">
+                                        <input type="submit" name="submit" value="Cập nhật thay đổi" class="btn btn-warning max-width mt-2" />
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <input type="submit" name="submit" value="Xóa khuyến mãi" class="btn btn-danger max-width mt-2" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        <hr class="m-lg-2" />
+                    </div>
+                </form>
+                <div class="row">
+                    <h5>Thêm sản phẩm vào chương trình khuyến mãi: <button class="btn btn-secondary" id="themSanPham">Thêm sản phẩm</button></h5>
+                </div>
+                <div class="row" id="dsSanPham" style="display:none">
+                    @{
+                        if (dsSanPham != null || dsSanPham.Count > 0)
+                        {
+                            foreach (var item in dsSanPham)
+                            {
+
+                                <div class="col-md-3 p-1 m-1">
+                                    <div class="card card-main">
+                                        <img src="~/Images/@item.hinhAnh[0]" width="90%" />
+                                        <div class="card-main position-absolute max-width height-100">
+                                            <a href="/Home/AddSanPhamToKhuyenMai/?maSanPham=@item.maSanPham&maKhuyenMai=@Model.maKhuyenMai"
+                                               class="btn btn-primary btn-add">Thêm vào chương trình</a>
+                                        </div>
+
+                                        <div class="card-body">
+                                            @{
+                                                if (item.tenSanPham.Length > 40)
+                                                {
+                                                    <h5 class="card-title text-primary">
+                                                        @item.tenSanPham.Substring(0, 40) ...
+                                                        <label class="text-gray">(@item.maSanPham)</label>
+                                                    </h5>
+                                                }
+                                                else
+                                                {
+                                                    <h5 class="card-title text-primary">
+                                                        @item.tenSanPham
+                                                        <label class="text-gray">(@item.maSanPham)</label>
+                                                    </h5>
+                                                }
+                                            }
+
+                                            <h6 class="card-text text-danger">@item.gia.ToString("N0") vnđ</h6>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+            }
+        }
+
+
+        <div class="row" id="hiden_" style="display:none">
+            <h5>Ẩn danh sách sản phẩm: <button class="btn btn-secondary" id="anSanPham">Ẩn sản phẩm</button></h5>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <h5>Các sản phẩm thuộc khuyến mãi:</h5>
+        <table class="max-width table table-light">
+            @{
+                if (dsSanPhamTheMa.Count > 0)
+                {
+                    foreach (var item in dsSanPhamTheMa)
+                    {
+                        <tr>
+                            <td style="width:15%">
+                                @{ if (item.hinhAnh.Count() > 0)
+                                    {
+                                        <img src="~/Images/@item.hinhAnh[0]" width="150%" />
+
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Images/default_image.png" width="150%" />
+                                    }
+                                }
+                            </td>
+                                <td style="width:70%">@item.tenSanPham <label>(@item.maSanPham )</label></td>
+                                <td style="width:15%">
+                                    <a href="/Home/PullSanPhamKhoiKhuyenMai/?maKhuyenMai=@Model.maKhuyenMai&maSanPham=@item.maSanPham">
+                                        <img src="~/Images/remove.png" width="100%" />
+                                    </a>
+                                </td>
+                            </tr>
+                    }
+
+                }
+                else if (dsSanPhamTheMa == null || dsSanPhamTheMa.Count == 0)
+                {
+                    <tr><td colspan="3"><h5>Hiện chưa có sản phẩm nào!!!</h5></td></tr>
+                }
+            }
+
+        </table>
+
+    </div>
+</div>
+
+
+<script>
+    var btnThemSanPham = document.getElementById('themSanPham');
+    var divAn = document.getElementById('hiden_');
+    var btnAn = document.getElementById('anSanPham');
+    var divDsSanPham = document.getElementById('dsSanPham');
+    btnThemSanPham.onclick = function () {
+        divDsSanPham.style.display = 'flex';
+        divAn.style.display = 'block';
+        btnThemSanPham.display = 'none';
+    }
+    btnAn.onclick = function () {
+        divDsSanPham.style.display = 'none';
+        divAn.style.display = 'none';
+        btnThemSanPham.display = 'block';
+    }
+
+
+    var selectedKM = document.getElementById('selectedKM');
+
+    var khuyenMaiMoi = document.getElementById('khuyenMaiMoi');
+    selectedKM.onchange = function () {
+        var selectedValue = selectedKM.value;
+        if (selectedValue == "addNew") {
+            khuyenMaiMoi.style.display = 'block';
+        }
+        else {
+            khuyenMaiMoi.style.display = 'none';
+        }
+            
+    }
+</script>
+
